@@ -3,106 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyApp - APK Download</title>
+
+    <title>Video App - Download APK</title>
 
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         body {
             font-family: Arial, sans-serif;
-            background: #f1f5f9;
-            color: #1e293b;
+            background: #f4f7fb;
+            color: #172033;
         }
 
+        /* TOP HEADER */
         .header {
-            background: #111827;
+            background: linear-gradient(135deg, #111827, #2563eb);
             color: white;
             text-align: center;
-            padding: 30px 15px;
+            padding: 35px 20px;
         }
 
         .header h1 {
-            font-size: 30px;
+            font-size: 32px;
             margin-bottom: 8px;
         }
 
         .header p {
-            color: #d1d5db;
+            font-size: 15px;
+            opacity: 0.9;
+        }
+
+        /* MAIN CARD */
+        .container {
+            width: 92%;
+            max-width: 480px;
+            margin: 30px auto;
         }
 
         .card {
-            width: 92%;
-            max-width: 480px;
-            margin: 35px auto;
             background: white;
-            border-radius: 20px;
+            border-radius: 22px;
             padding: 28px 20px;
             text-align: center;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.10);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.10);
         }
 
+        /* APP ICON */
         .app-icon {
-            width: 100px;
-            height: 100px;
-            margin: auto;
-            margin-bottom: 18px;
-            border-radius: 22px;
-            background: #e5e7eb;
+            width: 105px;
+            height: 105px;
+            margin: 0 auto 18px;
+            border-radius: 25px;
+            background: #e8eefc;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 48px;
+            font-size: 50px;
         }
 
         .card h2 {
-            font-size: 26px;
-            margin-bottom: 12px;
+            font-size: 27px;
+            margin-bottom: 10px;
         }
 
         .description {
             color: #64748b;
             line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .info {
-            background: #f8fafc;
-            border-radius: 12px;
-            padding: 14px;
             margin-bottom: 22px;
-            line-height: 1.8;
         }
 
+        /* APP INFORMATION */
+        .info-box {
+            background: #f8fafc;
+            border-radius: 14px;
+            padding: 15px;
+            margin-bottom: 22px;
+            text-align: left;
+            line-height: 2;
+        }
+
+        .info-box span {
+            float: right;
+            color: #475569;
+        }
+
+        /* DOWNLOAD BUTTON */
         .download-btn {
             display: block;
             width: 100%;
-            padding: 16px;
+            padding: 17px 10px;
+            border-radius: 14px;
             background: #16a34a;
             color: white;
             text-decoration: none;
-            border-radius: 12px;
-            font-size: 19px;
+            font-size: 20px;
             font-weight: bold;
+            box-shadow: 0 6px 15px rgba(22,163,74,0.25);
         }
 
         .download-btn:active {
             transform: scale(0.98);
         }
 
-        .note {
+        .download-text {
             margin-top: 18px;
-            color: #64748b;
             font-size: 13px;
-            line-height: 1.5;
+            color: #64748b;
+            line-height: 1.6;
         }
 
+        /* FEATURES */
+        .features {
+            margin-top: 20px;
+            background: white;
+            border-radius: 18px;
+            padding: 20px;
+        }
+
+        .features h3 {
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        .features p {
+            margin: 9px 0;
+            color: #475569;
+        }
+
+        /* FOOTER */
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 25px 10px;
             color: #64748b;
             font-size: 13px;
         }
@@ -111,43 +146,81 @@
 
 <body>
 
+    <!-- HEADER -->
     <header class="header">
-        <h1>MyApp</h1>
+        <h1>Video App</h1>
         <p>Official APK Download</p>
     </header>
 
-    <main class="card">
 
-        <div class="app-icon">
-            📱
+    <!-- MAIN -->
+    <div class="container">
+
+        <div class="card">
+
+            <!-- APP ICON -->
+            <div class="app-icon">
+                🎬
+            </div>
+
+            <h2>Video App</h2>
+
+            <p class="description">
+                हमारा Video App डाउनलोड करें।
+                नीचे दिए गए Download button पर दबाकर APK file डाउनलोड करें।
+            </p>
+
+
+            <!-- APP DETAILS -->
+            <div class="info-box">
+                <div>
+                    <b>Version</b>
+                    <span>1.0</span>
+                </div>
+
+                <div>
+                    <b>APK File</b>
+                    <span>video.apk</span>
+                </div>
+
+                <div>
+                    <b>File Size</b>
+                    <span>6 MB</span>
+                </div>
+            </div>
+
+
+            <!-- DOWNLOAD -->
+            <a class="download-btn" href="./video.apk">
+                ⬇️ DOWNLOAD APK
+            </a>
+
+            <p class="download-text">
+                Download button दबाएँ और APK डाउनलोड करें।
+                डाउनलोड पूरा होने के बाद Downloads folder में जाकर APK खोलें।
+            </p>
+
         </div>
 
-        <h2>MyApp</h2>
 
-        <p class="description">
-            यह मेरा Android App है।
-            नीचे दिए गए button से APK डाउनलोड करें।
-        </p>
+        <!-- FEATURES -->
+        <div class="features">
 
-        <div class="info">
-            <b>Version:</b> 1.0<br>
-            <b>APK Size:</b> 6 MB<br>
-            <b>File:</b> MyApp.apk
+            <h3>📱 App Information</h3>
+
+            <p>✅ आसान और उपयोग करने में सरल</p>
+            <p>✅ Android APK</p>
+            <p>✅ Version 1.0</p>
+            <p>✅ APK Size लगभग 6 MB</p>
+
         </div>
 
-        <a class="download-btn" href="./MyApp.apk">
-            ⬇️ DOWNLOAD APK
-        </a>
+    </div>
 
-        <p class="note">
-            Download button दबाकर APK file डाउनलोड करें।
-            डाउनलोड पूरा होने के बाद अपने फोन के Downloads folder में APK देखें।
-        </p>
 
-    </main>
-
+    <!-- FOOTER -->
     <footer>
-        © 2026 MyApp
+        © 2026 Video App
     </footer>
 
 </body>
