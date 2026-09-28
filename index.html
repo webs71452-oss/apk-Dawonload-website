@@ -94,6 +94,7 @@
             border-radius: 10px;
             font-size: 18px;
             font-weight: bold;
+            cursor: pointer;
         }
 
         .download-btn:hover {
@@ -170,13 +171,14 @@
         <div class="info">
             <b>App Name:</b> Video Call<br>
             <b>Platform:</b> Android<br>
-            <b>File:</b> Video_Call.apk
+            <b>File:</b> video call.apk
         </div>
 
+        <!-- APK DOWNLOAD -->
         <a
             class="download-btn"
-            href="./Video_Call.apk"
-            download="Video_Call.apk"
+            href="./video%20call.apk"
+            download="video call.apk"
             id="downloadButton"
         >
             ⬇ Download APK
@@ -193,11 +195,12 @@
         <h3>📲 How to Install</h3>
 
         <ol>
-            <li>Download the APK.</li>
-            <li>Open the downloaded APK file.</li>
-            <li>Follow Android's installation instructions.</li>
-            <li>Tap Install.</li>
-            <li>After installation, open the app.</li>
+            <li>ऊपर Download APK बटन दबाएँ।</li>
+            <li>APK download होने दें।</li>
+            <li>Download हुई APK file खोलें।</li>
+            <li>Android की installation instructions follow करें।</li>
+            <li>Install दबाएँ।</li>
+            <li>Installation पूरा होने के बाद app खोलें।</li>
         </ol>
 
     </div>
@@ -209,15 +212,20 @@
 </footer>
 
 <script>
-    const downloadButton = document.getElementById("downloadButton");
-    const successMessage = document.getElementById("successMessage");
+    const downloadButton =
+        document.getElementById("downloadButton");
+
+    const successMessage =
+        document.getElementById("successMessage");
 
     downloadButton.addEventListener("click", function () {
+
         successMessage.style.display = "block";
 
         setTimeout(function () {
             successMessage.style.display = "none";
         }, 5000);
+
     });
 </script>
 
