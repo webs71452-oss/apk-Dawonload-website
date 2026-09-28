@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Video App - Download APK</title>
+    <title>Video App - APK Download</title>
 
     <style>
         * {
@@ -15,11 +15,10 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: #f4f7fb;
+            background: #f1f5f9;
             color: #172033;
         }
 
-        /* TOP HEADER */
         .header {
             background: linear-gradient(135deg, #111827, #2563eb);
             color: white;
@@ -34,10 +33,8 @@
 
         .header p {
             font-size: 15px;
-            opacity: 0.9;
         }
 
-        /* MAIN CARD */
         .container {
             width: 92%;
             max-width: 480px;
@@ -47,27 +44,26 @@
         .card {
             background: white;
             border-radius: 22px;
-            padding: 28px 20px;
+            padding: 30px 20px;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.10);
         }
 
-        /* APP ICON */
-        .app-icon {
+        .icon {
             width: 105px;
             height: 105px;
-            margin: 0 auto 18px;
+            margin: 0 auto 20px;
             border-radius: 25px;
-            background: #e8eefc;
+            background: #e0e7ff;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 50px;
+            font-size: 52px;
         }
 
-        .card h2 {
+        h2 {
             font-size: 27px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .description {
@@ -76,65 +72,59 @@
             margin-bottom: 22px;
         }
 
-        /* APP INFORMATION */
-        .info-box {
+        .info {
             background: #f8fafc;
             border-radius: 14px;
             padding: 15px;
-            margin-bottom: 22px;
             text-align: left;
             line-height: 2;
+            margin-bottom: 24px;
         }
 
-        .info-box span {
+        .info span {
             float: right;
             color: #475569;
         }
 
-        /* DOWNLOAD BUTTON */
-        .download-btn {
+        .download {
             display: block;
             width: 100%;
-            padding: 17px 10px;
-            border-radius: 14px;
+            padding: 17px;
             background: #16a34a;
             color: white;
             text-decoration: none;
+            border-radius: 14px;
             font-size: 20px;
             font-weight: bold;
-            box-shadow: 0 6px 15px rgba(22,163,74,0.25);
         }
 
-        .download-btn:active {
+        .download:active {
             transform: scale(0.98);
         }
 
-        .download-text {
+        .note {
             margin-top: 18px;
             font-size: 13px;
             color: #64748b;
             line-height: 1.6;
         }
 
-        /* FEATURES */
         .features {
-            margin-top: 20px;
             background: white;
-            border-radius: 18px;
+            margin-top: 20px;
             padding: 20px;
+            border-radius: 18px;
         }
 
         .features h3 {
             margin-bottom: 12px;
-            font-size: 20px;
         }
 
         .features p {
-            margin: 9px 0;
             color: #475569;
+            margin: 9px 0;
         }
 
-        /* FOOTER */
         footer {
             text-align: center;
             padding: 25px 10px;
@@ -146,20 +136,16 @@
 
 <body>
 
-    <!-- HEADER -->
     <header class="header">
         <h1>Video App</h1>
         <p>Official APK Download</p>
     </header>
 
-
-    <!-- MAIN -->
     <div class="container">
 
         <div class="card">
 
-            <!-- APP ICON -->
-            <div class="app-icon">
+            <div class="icon">
                 🎬
             </div>
 
@@ -167,58 +153,46 @@
 
             <p class="description">
                 हमारा Video App डाउनलोड करें।
-                नीचे दिए गए Download button पर दबाकर APK file डाउनलोड करें।
+                नीचे दिए गए button पर दबाकर APK डाउनलोड करें।
             </p>
 
+            <div class="info">
+                <b>Version</b>
+                <span>1.0</span>
+                <br>
 
-            <!-- APP DETAILS -->
-            <div class="info-box">
-                <div>
-                    <b>Version</b>
-                    <span>1.0</span>
-                </div>
+                <b>APK File</b>
+                <span>video.apk</span>
+                <br>
 
-                <div>
-                    <b>APK File</b>
-                    <span>video.apk</span>
-                </div>
-
-                <div>
-                    <b>File Size</b>
-                    <span>6 MB</span>
-                </div>
+                <b>Size</b>
+                <span>6 MB</span>
             </div>
 
-
-            <!-- DOWNLOAD -->
-            <a class="download-btn" href="./video.apk">
+            <!-- APK DOWNLOAD -->
+            <a class="download" href="video.apk">
                 ⬇️ DOWNLOAD APK
             </a>
 
-            <p class="download-text">
+            <p class="note">
                 Download button दबाएँ और APK डाउनलोड करें।
-                डाउनलोड पूरा होने के बाद Downloads folder में जाकर APK खोलें।
             </p>
 
         </div>
 
-
-        <!-- FEATURES -->
         <div class="features">
 
             <h3>📱 App Information</h3>
 
-            <p>✅ आसान और उपयोग करने में सरल</p>
-            <p>✅ Android APK</p>
+            <p>✅ Android Application</p>
             <p>✅ Version 1.0</p>
+            <p>✅ आसान Download</p>
             <p>✅ APK Size लगभग 6 MB</p>
 
         </div>
 
     </div>
 
-
-    <!-- FOOTER -->
     <footer>
         © 2026 Video App
     </footer>
