@@ -23,7 +23,7 @@
             background: #111827;
             color: white;
             text-align: center;
-            padding: 28px 15px;
+            padding: 30px 15px;
         }
 
         header h1 {
@@ -32,8 +32,8 @@
         }
 
         header p {
-            font-size: 15px;
             color: #d1d5db;
+            font-size: 15px;
         }
 
         .container {
@@ -42,26 +42,26 @@
             padding: 0 15px;
         }
 
-        .app-card {
+        .card {
             background: white;
-            border-radius: 16px;
             padding: 25px;
+            border-radius: 16px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
         }
 
-        .app-icon {
+        .icon {
             width: 85px;
             height: 85px;
             margin: 0 auto 18px;
             border-radius: 20px;
             background: #2563eb;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             font-size: 42px;
         }
 
-        .app-card h2 {
+        h2 {
             text-align: center;
             font-size: 26px;
             margin-bottom: 12px;
@@ -76,8 +76,8 @@
 
         .info {
             background: #f3f4f6;
-            border-radius: 10px;
             padding: 15px;
+            border-radius: 10px;
             line-height: 1.8;
             font-size: 14px;
             margin-bottom: 20px;
@@ -86,50 +86,32 @@
         .download-btn {
             display: block;
             width: 100%;
-            text-align: center;
-            text-decoration: none;
+            padding: 15px;
             background: #2563eb;
             color: white;
-            padding: 15px;
+            text-align: center;
+            text-decoration: none;
             border-radius: 10px;
             font-size: 18px;
             font-weight: bold;
-            margin-bottom: 12px;
         }
 
         .download-btn:hover {
             background: #1d4ed8;
         }
 
-        .view-btn {
-            display: block;
-            width: 100%;
-            text-align: center;
-            text-decoration: none;
-            background: #e5e7eb;
-            color: #111827;
-            padding: 14px;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: bold;
-        }
-
-        .view-btn:hover {
-            background: #d1d5db;
-        }
-
         .success {
             display: none;
-            background: #dcfce7;
-            color: #166534;
+            margin-top: 15px;
             padding: 13px;
             border-radius: 10px;
-            margin-top: 15px;
+            background: #dcfce7;
+            color: #166534;
             text-align: center;
             font-weight: bold;
         }
 
-        .install-box {
+        .steps {
             background: white;
             margin-top: 20px;
             padding: 22px;
@@ -137,36 +119,29 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
         }
 
-        .install-box h2 {
-            font-size: 21px;
+        .steps h3 {
             margin-bottom: 12px;
         }
 
-        .install-box ol {
+        .steps ol {
             padding-left: 22px;
             line-height: 1.8;
-            color: #444;
         }
 
         footer {
             text-align: center;
-            padding: 25px 15px;
+            padding: 25px;
             color: #777;
             font-size: 14px;
         }
 
         @media (max-width: 500px) {
-
             header h1 {
                 font-size: 25px;
             }
 
-            .app-card {
+            .card {
                 padding: 20px;
-            }
-
-            .app-card h2 {
-                font-size: 23px;
             }
         }
     </style>
@@ -179,14 +154,11 @@
     <p>Android APK Download</p>
 </header>
 
-
 <div class="container">
 
-    <div class="app-card">
+    <div class="card">
 
-        <div class="app-icon">
-            📹
-        </div>
+        <div class="icon">📹</div>
 
         <h2>Video Call</h2>
 
@@ -201,71 +173,52 @@
             <b>File:</b> Video_Call.apk
         </div>
 
-        <!-- DOWNLOAD APK -->
-
         <a
             class="download-btn"
             href="./Video_Call.apk"
             download="Video_Call.apk"
-            onclick="downloadAPK()"
+            id="downloadButton"
         >
-            ⬇ Download Video Call APK
+            ⬇ Download APK
         </a>
 
-        <!-- VIEW APK -->
-
-        <a
-            class="view-btn"
-            href="./Video_Call.apk"
-            target="_blank"
-        >
-            👁 VIEW APK
-        </a>
-
-        <div id="success" class="success">
-            ✅ Download Started Successfully!
+        <div id="successMessage" class="success">
+            ✅ Download started successfully!
         </div>
 
     </div>
 
+    <div class="steps">
 
-    <div class="install-box">
-
-        <h2>📲 How to Install</h2>
+        <h3>📲 How to Install</h3>
 
         <ol>
-            <li>ऊपर Download button दबाएँ।</li>
-            <li>APK download होने दें।</li>
-            <li>Downloaded APK file खोलें।</li>
-            <li>Android permission माँगे तो अनुमति दें।</li>
-            <li>Install पर दबाएँ।</li>
-            <li>Installation पूरा होने के बाद app खोलें।</li>
+            <li>Download the APK.</li>
+            <li>Open the downloaded APK file.</li>
+            <li>Follow Android's installation instructions.</li>
+            <li>Tap Install.</li>
+            <li>After installation, open the app.</li>
         </ol>
 
     </div>
 
 </div>
 
-
 <footer>
     © 2026 Video Call
 </footer>
 
-
 <script>
+    const downloadButton = document.getElementById("downloadButton");
+    const successMessage = document.getElementById("successMessage");
 
-function downloadAPK() {
+    downloadButton.addEventListener("click", function () {
+        successMessage.style.display = "block";
 
-    const success = document.getElementById("success");
-
-    success.style.display = "block";
-
-    setTimeout(function() {
-        success.style.display = "none";
-    }, 5000);
-
-}
-
+        setTimeout(function () {
+            successMessage.style.display = "none";
+        }, 5000);
+    });
 </script>
 
 </body>
