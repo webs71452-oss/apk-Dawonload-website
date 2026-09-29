@@ -1,264 +1,363 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Video Call - APK Download</title>
+  <title>Video Call APK</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f6f8;
-            color: #222;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e3a8a, #2563eb);
+      min-height: 100vh;
+      color: #fff;
+      padding: 20px;
+    }
 
-        header {
-            background: #111827;
-            color: white;
-            text-align: center;
-            padding: 30px 15px;
-        }
+    .container {
+      max-width: 500px;
+      margin: 30px auto;
+    }
 
-        header h1 {
-            font-size: 30px;
-            margin-bottom: 8px;
-        }
+    .card {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 25px;
+      padding: 28px 22px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+      text-align: center;
+    }
 
-        header p {
-            color: #d1d5db;
-            font-size: 15px;
-        }
+    .app-icon {
+      width: 95px;
+      height: 95px;
+      border-radius: 24px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px;
+      font-size: 45px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
 
-        .container {
-            max-width: 650px;
-            margin: 30px auto;
-            padding: 0 15px;
-        }
+    h1 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
 
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 16px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-        }
+    .subtitle {
+      color: #dbeafe;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 22px;
+    }
 
-        .icon {
-            width: 85px;
-            height: 85px;
-            margin: 0 auto 18px;
-            border-radius: 20px;
-            background: #2563eb;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 42px;
-        }
+    .info-box {
+      background: rgba(0,0,0,0.18);
+      border-radius: 16px;
+      padding: 16px;
+      text-align: left;
+      margin-bottom: 20px;
+    }
 
-        h2 {
-            text-align: center;
-            font-size: 26px;
-            margin-bottom: 12px;
-        }
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      font-size: 14px;
+    }
 
-        .description {
-            text-align: center;
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
+    .info-row:last-child {
+      border-bottom: none;
+    }
 
-        .info {
-            background: #f3f4f6;
-            padding: 15px;
-            border-radius: 10px;
-            line-height: 1.8;
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
+    .label {
+      color: #bfdbfe;
+    }
 
-        .download-btn {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            background: #2563eb;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 10px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+    .value {
+      font-weight: bold;
+    }
 
-        .download-btn:hover {
-            background: #1d4ed8;
-        }
+    .download-btn,
+    .view-btn,
+    .open-btn {
+      display: block;
+      width: 100%;
+      border: none;
+      border-radius: 15px;
+      padding: 16px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.2s;
+    }
 
-        .view-btn {
-            display: block;
-            width: 100%;
-            padding: 14px;
-            margin-top: 12px;
-            background: #e5e7eb;
-            color: #111827;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: bold;
-        }
+    .download-btn {
+      background: #22c55e;
+      color: white;
+      margin-top: 8px;
+    }
 
-        .view-btn:hover {
-            background: #d1d5db;
-        }
+    .download-btn:hover {
+      transform: translateY(-2px);
+      background: #16a34a;
+    }
 
-        .success {
-            display: none;
-            margin-top: 15px;
-            padding: 13px;
-            border-radius: 10px;
-            background: #dcfce7;
-            color: #166534;
-            text-align: center;
-            font-weight: bold;
-        }
+    .view-btn {
+      background: white;
+      color: #1d4ed8;
+      margin-top: 12px;
+    }
 
-        .steps {
-            background: white;
-            margin-top: 20px;
-            padding: 22px;
-            border-radius: 16px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-        }
+    .view-btn:hover {
+      transform: translateY(-2px);
+      background: #eff6ff;
+    }
 
-        .steps h3 {
-            margin-bottom: 12px;
-        }
+    .view-section {
+      display: none;
+      margin-top: 20px;
+      background: rgba(255,255,255,0.96);
+      color: #111827;
+      border-radius: 20px;
+      padding: 20px;
+      text-align: left;
+      animation: showBox 0.3s ease;
+    }
 
-        .steps ol {
-            padding-left: 22px;
-            line-height: 1.8;
-        }
+    @keyframes showBox {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-        footer {
-            text-align: center;
-            padding: 25px;
-            color: #777;
-            font-size: 14px;
-        }
+    .view-section h2 {
+      font-size: 21px;
+      margin-bottom: 12px;
+      color: #1d4ed8;
+    }
 
-        @media (max-width: 500px) {
-            header h1 {
-                font-size: 25px;
-            }
+    .apk-card {
+      background: #f1f5f9;
+      border-radius: 15px;
+      padding: 15px;
+      margin-top: 12px;
+    }
 
-            .card {
-                padding: 20px;
-            }
-        }
-    </style>
+    .apk-name {
+      font-weight: bold;
+      font-size: 16px;
+      word-break: break-word;
+    }
+
+    .status {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.5;
+    }
+
+    .open-btn {
+      background: #2563eb;
+      color: white;
+      margin-top: 14px;
+      text-align: center;
+    }
+
+    .open-btn:hover {
+      background: #1d4ed8;
+    }
+
+    .install-info {
+      margin-top: 16px;
+      padding: 14px;
+      border-radius: 13px;
+      background: #dbeafe;
+      color: #1e3a8a;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .footer {
+      text-align: center;
+      color: #bfdbfe;
+      font-size: 12px;
+      margin-top: 22px;
+    }
+
+    .success {
+      color: #15803d;
+      font-weight: bold;
+    }
+
+    @media (max-width: 420px) {
+      h1 {
+        font-size: 26px;
+      }
+
+      .card {
+        padding: 23px 17px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Video Call</h1>
-    <p>Android APK Download</p>
-</header>
-
-<div class="container">
+  <div class="container">
 
     <div class="card">
 
-        <div class="icon">
-            📹
+      <div class="app-icon">
+        📹
+      </div>
+
+      <h1>Video Call</h1>
+
+      <p class="subtitle">
+        Fast and simple video calling application.
+        Download the APK and use the app on your Android device.
+      </p>
+
+      <div class="info-box">
+
+        <div class="info-row">
+          <span class="label">App Name</span>
+          <span class="value">Video Call</span>
         </div>
 
-        <h2>Video Call</h2>
+        <div class="info-row">
+          <span class="label">File</span>
+          <span class="value">video call.apk</span>
+        </div>
 
-        <p class="description">
-            Download the Video Call Android application
-            from this website.
+        <div class="info-row">
+          <span class="label">Format</span>
+          <span class="value">APK</span>
+        </div>
+
+        <div class="info-row">
+          <span class="label">Platform</span>
+          <span class="value">Android</span>
+        </div>
+
+      </div>
+
+      <!-- DOWNLOAD BUTTON -->
+      <a
+        id="downloadButton"
+        class="download-btn"
+        href="video%20call.apk"
+        download="video call.apk"
+        onclick="downloadStarted()"
+      >
+        ⬇️ Download APK
+      </a>
+
+      <!-- VIEW BUTTON -->
+      <button
+        class="view-btn"
+        type="button"
+        onclick="toggleView()"
+      >
+        👁️ View
+      </button>
+
+      <!-- VIEW SECTION -->
+      <div id="viewSection" class="view-section">
+
+        <h2>📦 APK Details</h2>
+
+        <p>
+          Your APK download information is shown below.
         </p>
 
-        <div class="info">
-            <b>App Name:</b> Video Call<br>
-            <b>Platform:</b> Android<br>
-            <b>File:</b> video call.apk
+        <div class="apk-card">
+
+          <div class="apk-name">
+            📱 video call.apk
+          </div>
+
+          <div id="downloadStatus" class="status">
+            Download has not been started yet.
+          </div>
+
+          <a
+            id="openApkButton"
+            class="open-btn"
+            href="video%20call.apk"
+            style="display:none;"
+          >
+            📲 Open APK
+          </a>
+
         </div>
 
-        <!-- DOWNLOAD APK -->
-        <a
-            class="download-btn"
-            href="https://webs71452-oss.github.io/apk-Dawonload-website/video%20call.apk"
-            download="video call.apk"
-            id="downloadButton"
-        >
-            ⬇ Download APK
-        </a>
+        <div class="install-info">
+          <strong>How to install:</strong><br><br>
 
-        <!-- VIEW APK -->
-        <a
-            class="view-btn"
-            href="https://webs71452-oss.github.io/apk-Dawonload-website/video%20call.apk"
-            target="_blank"
-        >
-            👁 VIEW APK
-        </a>
-
-        <div id="successMessage" class="success">
-            ✅ Download started successfully!
+          1. Download the APK.<br>
+          2. Open the downloaded APK from your phone's Downloads folder.<br>
+          3. Android will show its installation screen if the APK is valid.<br>
+          4. Follow the Android instructions to install it.
         </div>
+
+      </div>
+
+      <div class="footer">
+        © 2026 Video Call • APK Download Page
+      </div>
 
     </div>
 
-    <div class="steps">
+  </div>
 
-        <h3>📲 How to Install</h3>
+  <script>
 
-        <ol>
-            <li>ऊपर Download APK बटन दबाएँ।</li>
-            <li>APK download होने दें।</li>
-            <li>Downloaded APK file खोलें।</li>
-            <li>Android की installation instructions follow करें।</li>
-            <li>Install दबाएँ।</li>
-            <li>Installation पूरा होने के बाद app खोलें।</li>
-        </ol>
+    function toggleView() {
 
-    </div>
+      const section = document.getElementById("viewSection");
 
-</div>
+      if (section.style.display === "block") {
+        section.style.display = "none";
+      } else {
+        section.style.display = "block";
+      }
 
-<footer>
-    © 2026 Video Call
-</footer>
+    }
 
-<script>
 
-    const downloadButton =
-        document.getElementById("downloadButton");
+    function downloadStarted() {
 
-    const successMessage =
-        document.getElementById("successMessage");
+      const status = document.getElementById("downloadStatus");
+      const openButton = document.getElementById("openApkButton");
 
-    downloadButton.addEventListener("click", function () {
+      status.innerHTML =
+        '<span class="success">✓ Download started.</span><br>' +
+        'Please check your browser notification or Downloads folder after the download finishes.';
 
-        successMessage.style.display = "block";
+      openButton.style.display = "block";
 
-        setTimeout(function () {
-            successMessage.style.display = "none";
-        }, 5000);
+    }
 
-    });
-
-</script>
+  </script>
 
 </body>
 </html>
