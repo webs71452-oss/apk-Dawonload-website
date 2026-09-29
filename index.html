@@ -46,7 +46,7 @@
             background: white;
             padding: 25px;
             border-radius: 16px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
         }
 
         .icon {
@@ -101,6 +101,24 @@
             background: #1d4ed8;
         }
 
+        .view-btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            margin-top: 12px;
+            background: #e5e7eb;
+            color: #111827;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .view-btn:hover {
+            background: #d1d5db;
+        }
+
         .success {
             display: none;
             margin-top: 15px;
@@ -117,7 +135,7 @@
             margin-top: 20px;
             padding: 22px;
             border-radius: 16px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
         }
 
         .steps h3 {
@@ -159,7 +177,9 @@
 
     <div class="card">
 
-        <div class="icon">📹</div>
+        <div class="icon">
+            📹
+        </div>
 
         <h2>Video Call</h2>
 
@@ -174,14 +194,23 @@
             <b>File:</b> video call.apk
         </div>
 
-        <!-- APK DOWNLOAD -->
+        <!-- DOWNLOAD APK -->
         <a
             class="download-btn"
-            href="./video%20call.apk"
+            href="https://webs71452-oss.github.io/apk-Dawonload-website/video%20call.apk"
             download="video call.apk"
             id="downloadButton"
         >
             ⬇ Download APK
+        </a>
+
+        <!-- VIEW APK -->
+        <a
+            class="view-btn"
+            href="https://webs71452-oss.github.io/apk-Dawonload-website/video%20call.apk"
+            target="_blank"
+        >
+            👁 VIEW APK
         </a>
 
         <div id="successMessage" class="success">
@@ -197,7 +226,7 @@
         <ol>
             <li>ऊपर Download APK बटन दबाएँ।</li>
             <li>APK download होने दें।</li>
-            <li>Download हुई APK file खोलें।</li>
+            <li>Downloaded APK file खोलें।</li>
             <li>Android की installation instructions follow करें।</li>
             <li>Install दबाएँ।</li>
             <li>Installation पूरा होने के बाद app खोलें।</li>
@@ -212,6 +241,7 @@
 </footer>
 
 <script>
+
     const downloadButton =
         document.getElementById("downloadButton");
 
@@ -227,6 +257,7 @@
         }, 5000);
 
     });
+
 </script>
 
 </body>
